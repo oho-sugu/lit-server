@@ -65,6 +65,7 @@ def lists():
 
     results = {}
     for result in resultlist:
+        result["key"] = result.key.name
         results[result.key.name] = result
 
     return jsonify(results)
