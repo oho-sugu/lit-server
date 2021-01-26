@@ -63,12 +63,12 @@ def lists():
     
     resultlist = list(query.fetch())
 
-    results = {}
+    resultlist2 = []
     for result in resultlist:
         result["key"] = result.key.name
-        results[result.key.name] = result
+        resultlist2.append(result)
 
-    return jsonify(results)
+    return jsonify({"objects": resultlist2})
 
 @app.route('/delete', methods=['GET'])
 def delete():
