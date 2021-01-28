@@ -7,6 +7,7 @@ from google.cloud import datastore
 
 
 app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 64*1024
 
 @app.route('/')
 def root():
